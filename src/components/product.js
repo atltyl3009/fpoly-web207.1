@@ -23,9 +23,14 @@ export default function Product(props) {
               <tr key={index}>
                 <td>{index + 1}</td>
                 <td>{item.name}</td>
-                <td width="150">
+                <td width="50">
+                  <button className="btn btn-warning btn-sm">
+                    Sửa 
+                  </button>
+                </td>
+                <td width="50">
                   <button className="btn btn-danger btn-sm">
-                    Xóa sản phẩm
+                    Xóa 
                   </button>
                 </td>
               </tr>
