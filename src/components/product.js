@@ -29,7 +29,9 @@ export default function Product(props) {
                   </button>
                 </td>
                 <td width="50">
-                  <button className="btn btn-danger btn-sm">
+                  <button className="btn btn-danger btn-sm"
+                  onClick={()=>props.onRemove(item.id)}
+                  >
                     Xóa 
                   </button>
                 </td>
