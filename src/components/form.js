@@ -42,6 +42,15 @@ const AddProductForm = (props) => {
         />
       </div>
       <div className="mb-3">
+        <label className="form-label">Chi Tiết</label>
+        <input
+          type="text"
+          className="form-control"
+          name="detail"
+          onChange={onHandleChange}
+        />
+      </div>
+      <div className="mb-3">
         <label className="form-label">Danh mục</label>
         <select onChange={onHandleChange} name="category">
           <option value="Danh mục A">Danh mục A</option>

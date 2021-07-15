@@ -15,6 +15,8 @@ export default function Product(props) {
             <tr>
               <th scope="col">#</th>
               <th scope="col">Tên sản phẩm</th>
+              <th scope="col">Giá Tiền</th>
+              <th scope="col">Chi Tiết</th>
               <th></th>
             </tr>
           </thead>
@@ -23,6 +25,8 @@ export default function Product(props) {
               <tr key={index}>
                 <td>{index + 1}</td>
                 <td>{item.name}</td>
+                <td>{item.price} $</td>
+                <td>{item.detail}</td>
                 <td width="50">
                   <button className="btn btn-warning btn-sm">
                     Sửa 

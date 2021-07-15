@@ -1,19 +1,39 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import AddProductForm2 from "./components/form-2";
 import Header from "./components/header";
 import Nav from "./components/nav";
 import Product from "./components/product";
 import "./dashboard.css";
-import data from "./data";
+
 export default function App() {
-  const [products, setProducts] = useState(data);
+  const [products, setProducts] = useState([]);
+  useEffect(() => {
+    fetch("http://localhost:4000/products")
+      .then((response) => response.json())
+      .then((data) => setProducts(data))
+  }, [])
   function onHandleRemove(id) {
-    const newProduct = products.filter((item) => item.id !== id);
-    setProducts(newProduct);
+    fetch("http://localhost:4000/products/" + id, {
+      method: "DELETE"
+    }).then((response) => response.json())
+      .then((data) => {
+        const newProduct = products.filter((item) => item.id !== id);
+        setProducts(newProduct);
+      })
   }
   const onHandleAdd = (item) => {
-    setProducts([...products, item]);
+    fetch("  http://localhost:4000/products/", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(item)
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        setProducts([...products, data]);
+      });
   };
   return (
     <div className="App">

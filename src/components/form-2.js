@@ -24,12 +24,26 @@ const AddProductForm2 = (props) => {
           {...register("name", { required: true })}
         />
         {errors.name && (
-          <span className="d-block mt-2 text-danger">Field is required</span>
+          <span className="d-block mt-2 text-danger">Vui lòng nhập tên sản phẩm</span>
         )}
       </div>
       <div className="mb-3">
         <label className="form-label">Giá sản phẩm</label>
-        <input type="number" className="form-control" {...register("price")} />
+        <input type="number" className="form-control" {...register("price", { required:true})} />
+        {errors.name && (
+          <span className="d-block mt-2 text-danger">Vui lòng nhập giá sản phẩm</span>
+        )}
+      </div>
+      <div className="mb-3">
+        <label className="form-label">Chi Tiết</label>
+        <input
+          type="text"
+          className="form-control"
+          {...register("detail", { required: true })}
+        />
+        {errors.detail && (
+          <span className="d-block mt-2 text-danger">Vui lòng nhập chi tiết sản phẩm</span>
+        )}
       </div>
       <div className="mb-3">
         <label className="form-label">Danh mục</label>
