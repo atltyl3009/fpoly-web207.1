@@ -23,7 +23,7 @@ export default function Header() {
       />
       <div className="navbar-nav">
         <div className="nav-item text-nowrap">
-          <a className="nav-link px-3" href="#">
+          <a className="nav-link px-3"  href="#">
             Đăng Xuất
           </a>
         </div>
