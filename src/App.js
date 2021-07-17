@@ -9,12 +9,12 @@ import "./dashboard.css";
 export default function App() {
   const [products, setProducts] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:4000/products")
+    fetch("https://60f2372f6d44f300177885ad.mockapi.io/api/test/product")
       .then((response) => response.json())
       .then((data) => setProducts(data))
   }, [])
   function onHandleRemove(id) {
-    fetch("http://localhost:4000/products/" + id, {
+    fetch("https://60f2372f6d44f300177885ad.mockapi.io/api/test/product" + id, {
       method: "DELETE"
     }).then((response) => response.json())
       .then((data) => {
@@ -23,7 +23,7 @@ export default function App() {
       })
   }
   const onHandleAdd = (item) => {
-    fetch("  http://localhost:4000/products/", {
+    fetch("https://60f2372f6d44f300177885ad.mockapi.io/api/test/product", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
