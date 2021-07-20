@@ -1,54 +1,64 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useState, useEffect } from "react";
-import AddProductForm2 from "./components/form-2";
-import Header from "./components/header";
-import Nav from "./components/nav";
-import Product from "./components/product";
+import { add, getAll, remove, update } from "./api/productAPI";
 import "./dashboard.css";
+import Routes from "./routes";
 
 export default function App() {
   const [products, setProducts] = useState([]);
   useEffect(() => {
-    fetch("https://60f2372f6d44f300177885ad.mockapi.io/api/test/product")
-      .then((response) => response.json())
-      .then((data) => setProducts(data))
-  }, [])
+    const getProducts = async () => {
+      try {
+        const { data } = await getAll();
+        setProducts(data);
+      } catch (error) {
+        console.log(error);
+
+      }
+    };
+    getProducts();
+  }, []);
   function onHandleRemove(id) {
-    fetch("https://60f2372f6d44f300177885ad.mockapi.io/api/test/product" + id, {
-      method: "DELETE"
-    }).then((response) => response.json())
-      .then((data) => {
-        const newProduct = products.filter((item) => item.id !== id);
-        setProducts(newProduct);
-      })
-  }
-  const onHandleAdd = (item) => {
-    fetch("https://60f2372f6d44f300177885ad.mockapi.io/api/test/product", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(item)
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        setProducts([...products, data]);
-      });
+    try {
+      remove(id); //xoá dữ liệu trên API
+      const newProduct = products.filter((item) => item.id !== id);
+      setProducts(newProduct);
+
+    } catch (error) {
+      console.log(error);
+
+    }
+  };
+  const onHandleAdd = async (item) => {
+    try {
+      const { data } = await add(item);
+      setProducts([...products, data]);
+
+    } catch (error) {
+      console.log(error);
+
+    }
+  };
+  const onHandleEdit = async (item) => {
+    try {
+      const { data } = await update(item);
+      console.log("app.js", data);
+      const newProducts = products.map((product) =>
+        product.id == data.id ? data : product
+      );
+      setProducts(newProducts);
+
+
+    } catch (error) {
+      console.log(error);
+
+    }
   };
   return (
-    <div className="App">
-      <div>
-        <Header />
-        <div className="container-fluid">
-          <div className="row">
-            <Nav />
-            <main className="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-              <AddProductForm2 onAdd={onHandleAdd} />
-              <Product products={products} onRemove={onHandleRemove} />
-            </main>
-          </div>
-        </div>
-      </div>
-    </div>
+    <Routes products={products} 
+    onRemove={onHandleRemove}
+     onAdd={onHandleAdd} 
+     onEdit={onHandleEdit}
+     />
   );
 }

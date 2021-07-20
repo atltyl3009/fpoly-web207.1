@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 export default function Nav() {
   return (
     <nav
@@ -7,28 +8,38 @@ export default function Nav() {
       <div className="position-sticky pt-3">
         <ul className="nav flex-column">
           <li className="nav-item">
-            <a className="nav-link active" aria-current="page" href="#">
+          <NavLink
+              className="nav-link"
+              aria-current="page"
+              to="/"
+              activeClassName="active"
+              exact
+            >
               <span data-feather="home" />
-              Dashboard
-            </a>
+              Quản lý
+            </NavLink>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="#">
-              <span data-feather="file" />
-              Orders
-            </a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link" href="#">
+          <NavLink
+              className="nav-link"
+              to="/product"
+              activeClassName="active"
+              exact
+            >
               <span data-feather="shopping-cart" />
-              Products
-            </a>
+              Sản phẩm
+            </NavLink>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="#">
+          <NavLink
+              className="nav-link"
+              to="/product/add"
+              activeClassName="active"
+              exact
+            >
               <span data-feather="users" />
-              Category
-            </a>
+              Thêm sản phẩm
+            </NavLink>
           </li>
         </ul>
       </div>
