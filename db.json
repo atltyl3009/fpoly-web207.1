@@ -20,10 +20,10 @@
   "products": [
     {
       "id": 1,
-      "name": "majestouch 1",
-      "price": 3200000,
-      "detail": "Bàn phím cơ nhập khẩu từ hàn cuốc",
-      "category": "Danh mục A",
+      "name": "majestouch 2",
+      "price": "320",
+      "detail": "Bàn phím cơ nhập khẩu từ hàn quốc",
+      "category": "Danh mục B",
       "categoryId": 3,
       "image": "https://d1vm37nfym7tjl.cloudfront.net/web/image/product.image/195/image_1024/B%C3%A0n%20ph%C3%ADm%20c%C6%A1%20Filco%20Majestouch%202%20%28Tenkeyless%29?unique=efdbd46"
     },
@@ -64,8 +64,70 @@
       "price": "550000",
       "detail": "đfsdfsùiefhugsdgfyusdufjdshgsdjfkhdfjshjgdfjhdfshjgfsjfgwkfhugsdfgs",
       "category": "Danh mục B"
+    },
+    {
+      "id": "3442100222231131022132",
+      "name": "ultraboost2020",
+      "price": "550000",
+      "detail": "đfsdfsùiefhugsdgfyusdufjdshgsdjfkhdfjshjgdfjhdfshjgfsjfgwkfhugsdfgs",
+      "category": "Danh mục A"
+    },
+    {
+      "id": "03300442334244032300302",
+      "name": "anhltph",
+      "price": "55000",
+      "detail": "đfsdfsùiefhugsdgfyusdufjdshgsdjfkhdfjshjgdfjhdfshjgfsjfgwkfhugsdfg",
+      "category": "Danh mục A"
     }
   ],
-  "orders": [],
-  "order_detail": []
+  "users": [
+    {
+      "email": "tienanhluu233574@gmail.com",
+      "password": "$2a$10$1EmVV7n381zwit/i2yGRy.IyUyPdnOsng5YDb27z8SCqYbRuyTUEG",
+      "name": "tienanh",
+      "id": 1
+    },
+    {
+      "email": "tienanhluu23574@gmail.com",
+      "password": "$2a$10$BH.pneysljyLrpeaFs4V..mrl1clRAmX6KDCRwdCrNf2VIXxb2/X2",
+      "name": "anhltph",
+      "id": 2
+    },
+    {
+      "email": "vip.phamthu@gmail.com",
+      "password": "$2a$10$IzroBWMcCr2Ckzk5booLcObCTnP12Fn5U1xuOaXkvYNIdK5FZgPRC",
+      "name": "aaa",
+      "id": 3
+    },
+    {
+      "email": "anhltph11790@gmail.com",
+      "password": "$2a$10$sEXgBtVA2UXGuCcGV0KvaeeYEBosiYFrG88dqo2iibHdX8JR5g792",
+      "name": "majestouch 2",
+      "id": 4
+    },
+    {
+      "email": "admin@gmail.com",
+      "password": "$2a$10$Rsx2WQk8rncrx4TY37ePK.seAhHLd65dmqez2dgzc7nMCnbOPvUAC",
+      "name": "anhltph11790",
+      "id": 5
+    },
+    {
+      "email": "anh@gmail.com",
+      "password": "$2a$10$7lsq2ZX2O5QS2DchuTEYo.LA/POXld4I4P1.oUjDk4V97bav5VVXC",
+      "name": "tanh",
+      "id": 6
+    },
+    {
+      "email": "anh1@gmail.com",
+      "password": "$2a$10$nLfpbHwVsuyOtNKGa/k1Mu1qhBxNZQYOoYr/2MT1Es9xZFtoA.vfO",
+      "name": "tanh1",
+      "id": 7
+    },
+    {
+      "email": "tienanh@gmail.com",
+      "password": "$2a$10$3fBqZpVr/ERRSLItJwH9luHjG7uDUSb0ZzVjh/I2X9KcEwLhL9dVO",
+      "name": "swa",
+      "id": 8
+    }
+  ]
 }

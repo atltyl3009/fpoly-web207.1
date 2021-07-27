@@ -3,7 +3,7 @@ import AddProductForm from "./pages/admin/product/add";
 import Header from "./components/header";
 import Nav from "./components/nav";
 import Product from "./pages/admin/product";
-
+import Signup from "./pages/website/signup";
 import DashBoard from "./pages/admin/dashboard";
 import NotFound from "./pages/404";
 import EditProductForm from "./pages/admin/product/edit";
@@ -29,6 +29,9 @@ const Routes = (props) => {
                                     </Route>
                                     <Route exact path="/product/:id/edit">
                                         <EditProductForm {...props} />
+                                    </Route>
+                                    <Route exact path="/signup">
+                                        <Signup {...props} />
                                     </Route>
                                     <Route path="*">
                                         <NotFound />
