@@ -41,6 +41,28 @@ export default function Nav() {
               Thêm sản phẩm
             </NavLink>
           </li>
+          <li className="nav-item">
+          <NavLink
+              className="nav-link"
+              to="/category"
+              activeClassName="active"
+              exact
+            >
+              <span data-feather="shopping-cart" />
+              Danh mục
+            </NavLink>
+          </li>
+          <li className="nav-item">
+          <NavLink
+              className="nav-link"
+              to="/category/add"
+              activeClassName="active"
+              exact
+            >
+              <span data-feather="users" />
+              Thêm danh mục
+            </NavLink>
+          </li>
         </ul>
       </div>
     </nav>

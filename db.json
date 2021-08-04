@@ -15,6 +15,10 @@
     {
       "id": 4,
       "name": "Laptop HP"
+    },
+    {
+      "id": "4202031103441141300014",
+      "name": "danh mục 10"
     }
   ],
   "products": [
@@ -50,34 +54,6 @@
       "price": 2500000,
       "detail": "Bàn phím cơ nhập khẩu từ Hà Nam",
       "image": "https://img.websosanh.vn/v10/users/review/images/kddx3v8xjx2om/15629035958661416261.jpg?compress=85"
-    },
-    {
-      "id": "33024213321221433421424",
-      "name": "anhltph",
-      "price": "550000",
-      "category": "Danh mục B",
-      "detail": "đfsdfsùiefhugsdgfyusdufjdshgsdjfkhdfjshjgdfjhdfshjgfsjfgwkfhugsdfgs"
-    },
-    {
-      "id": "20431001333111422100244",
-      "name": "Lưu Tiến Anh",
-      "price": "550000",
-      "detail": "đfsdfsùiefhugsdgfyusdufjdshgsdjfkhdfjshjgdfjhdfshjgfsjfgwkfhugsdfgs",
-      "category": "Danh mục B"
-    },
-    {
-      "id": "3442100222231131022132",
-      "name": "ultraboost2020",
-      "price": "550000",
-      "detail": "đfsdfsùiefhugsdgfyusdufjdshgsdjfkhdfjshjgdfjhdfshjgfsjfgwkfhugsdfgs",
-      "category": "Danh mục A"
-    },
-    {
-      "id": "03300442334244032300302",
-      "name": "anhltph",
-      "price": "55000",
-      "detail": "đfsdfsùiefhugsdgfyusdufjdshgsdjfkhdfjshjgdfjhdfshjgfsjfgwkfhugsdfg",
-      "category": "Danh mục A"
     }
   ],
   "users": [
@@ -128,6 +104,18 @@
       "password": "$2a$10$3fBqZpVr/ERRSLItJwH9luHjG7uDUSb0ZzVjh/I2X9KcEwLhL9dVO",
       "name": "swa",
       "id": 8
+    },
+    {
+      "email": "tienanh2k1@gmail.com",
+      "password": "$2a$10$SHh/aXJVkE0BeCQ01urbPe97PlIXDxuf3K0bsg0U71928.q0Ya8jK",
+      "name": "anhltph",
+      "id": 9
+    },
+    {
+      "email": "tienanh2k11@gmail.com",
+      "password": "$2a$10$jnVK0CpYVkzO/xCEX5hAFeqfsNJwqrPztPq47RO8vWYue5Tn/E0QG",
+      "name": "anhltph",
+      "id": 10
     }
   ]
 }

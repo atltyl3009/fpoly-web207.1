@@ -1,17 +1,17 @@
 import { Link } from "react-router-dom";
-export default function Product(props) {
+export default function Category(props) {
     console.log(props);
     return (
         <>
             <div className="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                <h1 className="h2 text-success">Quản lý sản phẩm</h1>
+                <h1 className="h2 text-success">Quản lý danh mục</h1>
                 <div className="btn-toolbar mb-2 mb-md-0">
                     <Link
-                        to="/product/add"
+                        to="/category/add"
                         type="button"
                         className="btn btn-sm btn-outline-primary"
                     >
-                        Thêm sản phẩm
+                        Thêm danh muc
                     </Link>
                 </div>
             </div>
@@ -20,21 +20,17 @@ export default function Product(props) {
           <thead>
             <tr>
               <th scope="col">#</th>
-              <th scope="col">Tên sản phẩm</th>
-              <th scope="col">Giá sản phẩm</th>
-              <th scope="col">Chi tiết</th>
+              <th scope="col">Tên danh mục</th>
               <th></th>
             </tr>
           </thead>
           <tbody>
-            {props.products.map((item, index) => (
+            {props.categories.map((item, index) => (
               <tr key={index}>
                 <td>{index + 1}</td>
                 <td>{item.name}</td>
-                <td>{item.price} $</td>
-                <td>{item.detail}</td>
                 <Link
-                    to={`/product/${item.id}/edit`}
+                    to={`/category/${item.id}/edit`}
                     className="btn btn-warning btn-sm"
                   >
                     Sửa
@@ -42,7 +38,7 @@ export default function Product(props) {
                 <td width="50">
                   <button
                     className="btn btn-danger btn-sm"
-                    onClick={() => props.onRemove(item.id)}
+                    onClick={() => props.onRemoveCate(item.id)}
                   >
                     Xóa
                   </button>

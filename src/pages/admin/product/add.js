@@ -1,6 +1,6 @@
 import { useForm } from "react-hook-form";
 import { useHistory } from "react-router";
-const AddProductForm = (props) => {
+const AddProductForm = (props, dataCate) => {
     const {
         register,
         handleSubmit,
@@ -18,7 +18,7 @@ const AddProductForm = (props) => {
     return (
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="mb-3">
-            <label className="form-label">Tên sản phẩm</label>
+            <label className="form-label text-info">Tên sản phẩm</label>
             <input
               type="text"
               className="form-control"
@@ -29,17 +29,17 @@ const AddProductForm = (props) => {
             )}
           </div>
           <div className="mb-3">
-            <label className="form-label">Giá sản phẩm</label>
+            <label className="form-label text-info">Giá sản phẩm</label>
             <input type="number" className="form-control" {...register("price", { required:true})} />
             {errors.price && (
               <span className="d-block mt-2 text-danger">Vui lòng nhập giá sản phẩm</span>
             )}
           </div>
           <div className="mb-3">
-            <label className="form-label">Chi Tiết</label>
+            <label className="form-label text-info">Chi Tiết</label>
             <input
               type="text"
-              className="form-control"
+              className="form-control text-info"
               {...register("detail", { required: true })}
             />
             {errors.detail && (
@@ -47,15 +47,15 @@ const AddProductForm = (props) => {
             )}
           </div>
           <div className="mb-3">
-            <label className="form-label">Danh mục</label>
+            <label className="form-label text-info">Danh mục</label>
             <select className="form-control" {...register("category")}>
               <option value="Danh mục A">Danh mục A</option>
               <option value="Danh mục B">Danh mục B</option>
             </select>
           </div>
-          <button className="btn btn-primary" type="submit">
-            Thêm sản phẩm
-          </button>
+          <div class="d-grid gap-2 col-6 mx-auto">
+                <button class="btn btn-primary" type="submit">Thêm</button>
+            </div>
         </form>
       );
 

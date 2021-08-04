@@ -1,11 +1,13 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useState, useEffect } from "react";
+import { addCate, getAllCate, removeCate, updateCate } from "./api/categoryAPI";
 import { add, getAll, remove, update } from "./api/productAPI";
 import "./dashboard.css";
 import Routes from "./routes";
 
 export default function App() {
   const [products, setProducts] = useState([]);
+  const [categories, setCategories]= useState([]);
   useEffect(() => {
     const getProducts = async () => {
       try {
@@ -18,6 +20,19 @@ export default function App() {
     };
     getProducts();
   }, []);
+  useEffect(() => {
+    const getCategories = async () => {
+      try {
+        const { data } = await getAllCate();
+        setCategories(data);
+      } catch (error) {
+        console.log(error);
+
+      }
+    };
+    getCategories();
+  }, []);
+  //products
   function onHandleRemove(id) {
     try {
       remove(id); //xoá dữ liệu trên API
@@ -54,11 +69,55 @@ export default function App() {
 
     }
   };
+  //categories
+  function onHandleRemoveCate(id) {
+    try {
+      removeCate(id); //xoá dữ liệu trên API
+      const newCategory = categories.filter((item) => item.id !== id);
+      setCategories(newCategory);
+
+    } catch (error) {
+      console.log(error);
+
+    }
+  };
+  const onHandleAddCate = async (item) => {
+    try {
+      const { data } = await addCate(item);
+      setCategories([...categories, data]);
+
+    } catch (error) {
+      console.log(error);
+
+    }
+  };
+  const onHandleEditCate = async (item) => {
+    try {
+      const { data } = await updateCate(item);
+      console.log("app.js", data);
+      const newCategories = categories.map((category) =>
+      category.id == data.id ? data : category
+      );
+      setCategories(newCategories);
+
+
+    } catch (error) {
+      console.log(error);
+
+    }
+  };
   return (
+    <>
     <Routes products={products} 
     onRemove={onHandleRemove}
      onAdd={onHandleAdd} 
      onEdit={onHandleEdit}
+     categories={categories} 
+     onRemoveCate={onHandleRemoveCate}
+      onAddCate={onHandleAddCate} 
+      onEditCate={onHandleEditCate}
      />
+     
+      </>
   );
 }
